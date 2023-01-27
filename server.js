@@ -2,7 +2,6 @@ const express=require('express')
 const  mongoose  = require('mongoose')
 const morgan = require('morgan')
 const cors=require('cors')
-const authJwt=require('./helpers/jwt')
 require('dotenv/config')
 
 const app=express()
@@ -15,7 +14,7 @@ app.use(express.urlencoded())
 app.use(cors())
 app.options("*",cors())
 app.use(morgan("tiny"))
-// app.use(authJwt)
+
 
 mongoose.pluralize(null);
 mongoose.set('strictQuery',false)
